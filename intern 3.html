@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration</title>
+    <style>
+        body {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #ecd5ec;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: rgb(238, 238, 241);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .event-card {
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .event-card:last-child {
+            border-bottom: none;
+        }
+        .event-title {
+            font-size: 20px;
+            font-weight: bolder;
+        }
+        .event-date {
+            color: rgb(31, 26, 26);
+        }
+        .register-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #c02f6b;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .form-group {
+            margin: 10px 0;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .submit-btn {
+            background-color: #595992;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upcoming Events</h1>
+        <div class="event-card">
+            <div class="event-title">IPL FINAL</div>
+            <div class="event-date">MAY 25, 2025</div>
+            <div class="event-description">WORLD'S BIGGEST CRICKET SPORT EVENT</div>
+            <button class="register-btn" onclick="showForm('IPL 2025')">Register</button>
+        </div>
+        <div class="event-card">
+            <div class="event-title">Tech Expo 2025</div>
+            <div class="event-date">July 20, 2025</div>
+            <div class="event-description">Showcasing the latest in technology and innovation.</div>
+            <button class="register-btn" onclick="showForm('Tech Expo 2025')">Register</button>
+        </div><div id="registration-form" style="display:none; margin-top: 20px;">
+        <h2>Register for <span id="event-name"></span></h2>
+        <div class="form-group">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" required>
+            <input type="number" id="number" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" required>
+            <input type="number" id="number" required>
+        </div>
+        <button class="submit-btn" onclick="submitForm()">Submit</button>
+    </div>
+</div>
+
+<script>
+    function showForm(eventName) {
+        document.getElementById("event-name").innerText = eventName;
+        document.getElementById("registration-form").style.display = "block";
+    }
+    function submitForm() {
+        alert("You have successfully registered!");
+    }
+</script>
+
+</body>
+</html>
